@@ -1,20 +1,25 @@
+pipeline {
+    agent any
+
     stages {
-        stage('Build') {
+
+        stage('Clone') {
             steps {
-                echo 'Building...'
+                echo 'Cloning successful'
             }
         }
 
-        stage('Test') {
+        stage('Compile') {
             steps {
-                echo 'Testing...'
+                sh 'javac mul1.java'
             }
         }
 
-        stage('Deploy') {
+        stage('Run') {
             steps {
-                echo 'Deploying...'
+                sh 'java mul1'
             }
         }
+
     }
 }
